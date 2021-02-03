@@ -13,8 +13,8 @@ exports.generateOgImages = async (imageGenerationJobs) => {
     const { componentPath, imgPath, size } = imageGenerationJob;
     const componentUrl = `${servingUrl}/${componentPath}`;
 
-    await page.goto(componentUrl);
     await page.setViewport(size);
+    await page.goto(componentUrl, { 'waitUntil' : 'networkidle2' });
 
     ensureThatImageDirExists(imgPath);
     await page.screenshot({ path: imgPath, clip: { x: 0, y: 0, ...size } });
