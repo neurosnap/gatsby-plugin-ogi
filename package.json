@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/neurosnap/gatsby-plugin-open-graph-images.git"
+    "url": "git+https://github.com/neurosnap/gatsby-plugin-ogi.git"
   },
   "keywords": [
     "gatsby",
@@ -24,9 +24,9 @@
   "author": "Eric Bower <me@erock.io>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/neurosnap/gatsby-plugin-open-graph-images/issues"
+    "url": "https://github.com/neurosnap/gatsby-plugin-ogi/issues"
   },
-  "homepage": "https://github.com/neurosnap/gatsby-plugin-open-graph-images#readme",
+  "homepage": "https://github.com/neurosnap/gatsby-plugin-ogi#readme",
   "dependencies": {
     "express": "^4.17.1",
     "puppeteer": "^3.3.0"
