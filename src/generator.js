@@ -19,12 +19,13 @@ exports.generateOgImages = async (imageGenerationJobs) => {
     ensureThatImageDirExists(imgPath);
     await page.screenshot({ path: imgPath, clip: { x: 0, y: 0, ...size } });
 
-    fs.unlinkSync(join("public", componentPath, "index.html"));
+    // fs.unlinkSync(join("public", componentPath, "index.html"));
 
     const printPath = `${imgPath.replace("public", "")} ${size.width}x${size.height}`;
     console.log(`🖼  created Image: ${printPath}`);
   }
 
+  await page.close();
   await browser.close();
 };
 

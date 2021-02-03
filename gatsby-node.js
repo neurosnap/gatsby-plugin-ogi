@@ -2,10 +2,13 @@ const { generateOgImages } = require("./src/generator");
 const { config } = require("./src/config");
 const { imageGenerationJobCache } = require("./src/cache");
 
-exports.onPreInit = async ({ cache }, pluginConfig) => {
+exports.onPreInit = async (pluginConfig) => {
   config.init(pluginConfig);
-  await imageGenerationJobCache.init(cache);
 };
+
+exports.onPreBootstrap = async ({ cache }) => {
+  await imageGenerationJobCache.init(cache);
+}
 
 exports.onCreatePage = async ({ page, cache }) => {
   if (!!page.context.ogImage && !!page.context.ogImage["__ogImageGenerationContext"]) {
